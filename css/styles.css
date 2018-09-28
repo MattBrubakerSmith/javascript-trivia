@@ -1,0 +1,25 @@
+#nav-column {
+    min-height: 100vh;
+}
+
+.form-group {
+    min-width: 50%;
+}
+
+@media screen and (max-width: 768px) {
+    #nav-column {
+        min-height: unset;
+    }
+
+    #main-column {
+        margin-top: 1.5rem;
+    }
+    
+    .form-group {
+        min-width: 100%;
+    }
+}
+
+.test {
+    background-color: pink;
+}

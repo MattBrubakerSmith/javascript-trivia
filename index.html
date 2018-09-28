@@ -6,8 +6,46 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JavaScript Trivia Extravaganza Extraordinaire!</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    
+    <div id="main-container" class="container-fluid d-md-flex m-0 p-0">
+        <div id="nav-column" class="col-md-3 bg-light border-right border-bottom py-4">
+            <div id="logo-area" class="d-flex justify-content-center">
+                <img src="assets/graphics/js-trivia-logo-black.svg" alt="JavaScript Triva Logo" class="w-75">
+            </div>
+            <div id="nav-area" class="d-flex justify-content-center mt-4">
+                <button id="begin-button" class="btn btn-primary">Begin Quiz</button>
+                <div id="progress-path">
+
+                </div>
+            </div>
+        </div>
+        <div id="main-column" class="col-md-9 d-flex flex-column justify-content-center align-items-center">
+            <div id="intro-container">
+                <h1 class="mx-4">JavaScript Trivia Quizzessential Adventure Plus&trade;</h1>
+                <p class="lead mx-4">Welcome to the craziest, scariest, deliciousest activity you never knew you didn't know you wanted! Just press the "Begin Quiz" button to... uh... yeah, BEGIN THE QUIZ!</p>
+            </div>
+            <div id="quiz-container" class="d-none">
+                <p class="lead font-weight-bold mx-4" data-bind="text: question"></p>
+                <div class="d-flex flex-wrap justify-content-between mx-4 mt-4" data-bind="foreach: answers">
+                    <div class="form-group">
+                        <button class="btn rounded-circle answer-button" data-bind="click: $parent.answerQuestion">&#9675;</button>
+                        &nbsp;<span data-bind="text: text"></span>
+                    </div>
+                </div>
+                <p id="answer-evaluation" class="mx-4 lead"></p>
+                <button id="back-button" class="btn btn-secondary ml-4">Previous</button><button id="next-button" class="btn btn-warning ml-4">Next</button>
+            </div>
+            <div id="complete-container" class="d-none">
+                <h1 id="exclamation" class="mx-4"></h1>
+                <h3 class="mx-4 mt-4">You scored <span id="score"></span>%!</h3>
+            </div>
+        </div>
+    </div>
+    <script src="js/knockout-3.4.2.js"></script>
+    <script src="js/question-view-model.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
